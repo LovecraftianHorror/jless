@@ -1,0 +1,27 @@
+[package]
+name = "jless-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+serde = "1.0"
+serde_json = { version = "1.0", features = ["arbitrary_precision"] }
+
+[dependencies.jless]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "parsing-is-correct"
+path = "fuzz_targets/parsing-is-correct.rs"
+test = false
+doc = false
