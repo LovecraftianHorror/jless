@@ -15,23 +15,10 @@ use termion::input::MouseTerminal;
 use termion::raw::IntoRawMode;
 use termion::screen::AlternateScreen;
 
-mod app;
-mod flatjson;
-mod highlighting;
-mod input;
-mod jsonparser;
-mod jsontokenizer;
-mod lineprinter;
-mod options;
-mod screenwriter;
-mod search;
-mod terminal;
-mod truncatedstrview;
-mod types;
-mod viewer;
-
-use app::App;
-use options::Opt;
+use jless::app::App;
+use jless::flatjson;
+use jless::input;
+use jless::options::Opt;
 
 fn main() {
     let opt = Opt::from_args();
