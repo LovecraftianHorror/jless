@@ -25,3 +25,9 @@ name = "parsing-is-correct"
 path = "fuzz_targets/parsing-is-correct.rs"
 test = false
 doc = false
+
+[[bin]]
+name = "parser-doesnt-crash"
+path = "fuzz_targets/parser-doesnt-crash.rs"
+test = false
+doc = false
